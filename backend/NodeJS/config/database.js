@@ -1,4 +1,5 @@
 module.exports = Object.freeze({
     USER: 'XXXX',
-    PASSWORD: 'YYYY'
+    PASSWORD: 'YYYY',
+    CLUSTER: 'ZZZZ'
 });
