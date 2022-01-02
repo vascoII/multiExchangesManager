@@ -1,9 +1,10 @@
 const express = require('express');
 const router = express.Router();
 
-const userCtrl = require('../app/http/controllers/user');
+const loginAction = require('../app/http/controllers/actions/auth/loginAction');
+const signupAction = require('../app/http/controllers/actions/auth/signupAction');
 
-router.post('/signup', userCtrl.signup);
-router.post('/login', userCtrl.login);
+router.post('/signup', signupAction.signup);
+router.post('/login', loginAction.login);
 
 module.exports = router;

@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const profitLossCtrl = require('../app/http/controllers/actions/getProfitLoss');
-const profitLossByExchangeCtrl = require('../app/http/controllers/actions/getProfitLossByExchange');
+const profitLossAction = require('../app/http/controllers/actions/getProfitLossAction');
+const profitLossByExchangeAction = require('../app/http/controllers/actions/getProfitLossByExchangeAction');
 
-router.get('/', profitLossCtrl.getProfitLoss);
-router.get('/:id', profitLossByExchangeCtrl.getProfitLossByExchange);
+router.get('/', profitLossAction.getProfitLoss);
+router.get('/:id', profitLossByExchangeAction.getProfitLossByExchange);
 
 module.exports = router;
