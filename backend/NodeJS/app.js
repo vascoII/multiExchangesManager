@@ -7,9 +7,11 @@ const profitLoss = require('./app/infrastructure/models/profitLossModel');
 const currentBalanceRoutes = require('./routes/currentBalance');
 const profitLossRoutes = require('./routes/profitLoss');
 
+const mongodbAccess = require('./config/database');
+
 const app = express();
 
-mongoose.connect('mongodb+srv://user01:Iyf98UbRB6jrvzrL@cluster0.b4l1p.mongodb.net/sample_thing?retryWrites=true&w=majority',
+mongoose.connect('mongodb+srv://' + mongodbAccess.USER + ':' + mongodbAccess.PASSWORD + '@cluster0.b4l1p.mongodb.net/sample_thing?retryWrites=true&w=majority',
     { useNewUrlParser: true,
         useUnifiedTopology: true })
     .then(() => console.log('Connexion à MongoDB réussie !'))
