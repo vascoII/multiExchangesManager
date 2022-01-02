@@ -5,6 +5,7 @@ const CurrentBalance = require('./app/infrastructure/models/currentBalanceModel'
 const profitLoss = require('./app/infrastructure/models/profitLossModel');
 
 const currentBalanceRoutes = require('./routes/currentBalance');
+const profitLossRoutes = require('./routes/profitLoss');
 
 const app = express();
 
@@ -31,7 +32,8 @@ app.use(express.json());
 
 /* currentBalance */
 app.use('/api/currentBalance', currentBalanceRoutes);
-
+/* profitLoss */
+app.use('/api/profitLoss', profitLossRoutes);
 
 
 /**
