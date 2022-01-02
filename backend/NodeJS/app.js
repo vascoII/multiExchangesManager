@@ -6,6 +6,7 @@ const profitLoss = require('./app/infrastructure/models/profitLossModel');
 
 const currentBalanceRoutes = require('./routes/currentBalance');
 const profitLossRoutes = require('./routes/profitLoss');
+const userRoutes = require('./routes/user');
 
 const mongodbAccess = require('./config/database');
 
@@ -32,6 +33,12 @@ app.use((req, res, next) => {
 
 app.use(express.json());
 
+/**
+ * AUTHENTICATION
+ */
+app.use('/api/auth', userRoutes);
+
+
 /* currentBalance */
 app.use('/api/currentBalance', currentBalanceRoutes);
 /* profitLoss */
@@ -43,10 +50,3 @@ app.use('/api/profitLoss', profitLossRoutes);
  */
 
 module.exports = app;
-
-
-/*
-MongoDB
-user01
-Iyf98UbRB6jrvzrL
- */
